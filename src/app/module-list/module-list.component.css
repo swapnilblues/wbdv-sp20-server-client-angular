@@ -1,3 +1,12 @@
 .active a {
   color: white;
 }
+
+.wbdv-module-item {
+  margin: 10px;
+}
+
+.wbdv-module-item-title {
+  color: black;
+}
+

@@ -10,10 +10,10 @@ import {ActivatedRoute} from "@angular/router";
 export class ModuleListComponent implements OnInit {
 
   modules = [
-    {_id: '123', title: 'Eden Hazard'},
-    {_id: '234', title: 'Cristiano Ronaldo'},
-    {_id: '345', title: 'Neymar JR'},
-    {_id: '456', title: 'Lionel Messi'}
+    // {_id: '123', title: 'Eden Hazard'},
+    // {_id: '234', title: 'Cristiano Ronaldo'},
+    // {_id: '345', title: 'Neymar JR'},
+    // {_id: '456', title: 'Lionel Messi'}
   ]
   courseId = ''
   moduleId = ''
