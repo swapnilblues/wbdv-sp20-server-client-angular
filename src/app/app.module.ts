@@ -10,7 +10,6 @@ import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { HomeComponent } from './home/home.component';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
-import { CourseViewerNavBarComponent } from './course-viewer-nav-bar/course-viewer-nav-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -20,8 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CourseViewerComponent,
     HomeComponent,
     ModuleListComponent,
-    LessonTabsComponent,
-    CourseViewerNavBarComponent
+    LessonTabsComponent
   ],
   imports: [
     FormsModule,
