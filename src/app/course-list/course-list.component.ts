@@ -13,7 +13,7 @@ export class CourseListComponent implements OnInit {
               private route: ActivatedRoute) {
   }
 
-  newCourseTitle = ''
+
   courses = []
   courseId = ''
 
@@ -30,6 +30,5 @@ export class CourseListComponent implements OnInit {
     this.courseId = params.courseId;
     })
   }
-
 
 }

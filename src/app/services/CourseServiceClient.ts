@@ -7,7 +7,7 @@ export class CourseServiceClient {
     fetch(`http://wbdv-generic-server.herokuapp.com/api/bhaumik/courses/${courseId}`)
       .then(response => response.json())
 
-  findAllCourses =() =>
+  findAllCourses = () =>
     fetch('http://wbdv-generic-server.herokuapp.com/api/bhaumik/courses')
       .then(response => response.json())
 }

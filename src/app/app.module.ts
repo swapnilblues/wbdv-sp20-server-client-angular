@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {ModuleServiceClient} from "./services/ModuleServiceClient";
+import {LessonServiceClient} from "./services/LessonServiceClient";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule
   ],
   providers: [
-    CourseServiceClient
+    CourseServiceClient,
+    ModuleServiceClient,
+    LessonServiceClient
   ],
   bootstrap: [AppComponent]
 })
