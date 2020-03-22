@@ -1,11 +1,10 @@
 <h2>Lesson Tabs</h2>
 
-<ul class="nav nav-pills">
+<ul class="nav nav-pills bg-secondary">
   <li class="list-group-item wbdv-topic-pill"
       [class] ="{'active' : lessonId === lesson._id}"
-      [ngClass] ="{'bg-dark' : lessonId !== lesson._id}"
       *ngFor="let lesson of lessons">
-    <a routerLink="/details/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}">
+    <a routerLink="/table/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}">
     {{lesson.title}}
     </a>
   </li>

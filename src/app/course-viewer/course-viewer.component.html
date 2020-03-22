@@ -4,33 +4,24 @@
 <!--<h2>Course Viewer {{courseId}}</h2>-->
 <!--<h3>{{course.title}}</h3>-->
 
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a href="/table/courses" class="nav-link cursor-pointer">
+    <i class="fa fa-times"></i>
+  </a>
+  <a href="#" class="navbar-brand wbdv-course-title">Course {{course.title}}</a>
+</nav>
+
+<br>
 <div class="container">
   <div class="row">
-
-
+    <div class="col-sm-4 bg-secondary">
+      <app-module-list></app-module-list>
+    </div>
     <div class="col-sm-8">
-
-        <div class="row">
-
-          <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <a href="/courses" class="nav-link cursor-pointer">
-              <i class="fa fa-times"></i>
-            </a>
-            <a href="#" class="navbar-brand wbdv-course-title">Course {{course.title}}</a>
-          </nav>
-
-        </div>
-        <br><br>
-        <div class="row">
-          <div class="col-sm-4 bg-secondary">
-            <app-module-list></app-module-list>
-          </div>
-          <div class="col-sm-8">
-            <app-lesson-tabs></app-lesson-tabs>
-          </div>
-        </div>
-      </div>
-
+      <app-lesson-tabs></app-lesson-tabs>
+    </div>
   </div>
+
+
 </div>
 

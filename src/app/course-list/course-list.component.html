@@ -1,24 +1,24 @@
 <div class="container">
   <h2>Course List</h2>
 
-<!--  <input [(ngModel)]="newCourseTitle"/>-->
-<!--  <button (click)="createCourse(newCourseTitle)">-->
-<!--    Create New Course-->
-<!--  </button>-->
-
-  <ul class="list-group">
-    <li class="list-group-item wbdv-module-item"
-        [class]="{'active': courseId === course._id}"
-        [ngClass]="{'bg-dark': courseId !== course._id}"
-        *ngFor="let course of courses">
-      <i class="fa fa-file"></i>
-      <a routerLink="/details/{{course._id}}">
-        {{course.title}}
-      </a>
-<!--      <button (click)="deleteCourse(course)">-->
-<!--        Delete-->
-<!--      </button>-->
-    </li>
-  </ul>
+  <!--  <input [(ngModel)]="newCourseTitle"/>-->
+  <!--  <button (click)="createCourse(newCourseTitle)">-->
+  <!--    Create New Course-->
+  <!--  </button>-->
+  <div class="course-list">
+    <ul class="list-group">
+      <li class="list-group-item wbdv-course-item bg-secondary"
+          [class]="{'active': courseId === course._id}"
+          *ngFor="let course of courses">
+        <i class="fa fa-file"></i>
+        <a routerLink="/table/{{course._id}}">
+          {{course.title}}
+        </a>
+        <!--      <button (click)="deleteCourse(course)">-->
+        <!--        Delete-->
+        <!--      </button>-->
+      </li>
+    </ul>
+  </div>
 </div>
 

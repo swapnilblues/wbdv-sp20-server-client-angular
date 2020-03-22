@@ -3,9 +3,8 @@
   <ul class="list-group">
     <li class="list-group-item wbdv-module-item"
         [class]="{'active': moduleId === module._id}"
-        [ngClass]="{'bg-dark': moduleId !== module._id}"
         *ngFor="let module of modules">
-      <a routerLink="/details/{{courseId}}/modules/{{module._id}}">
+      <a routerLink="/table/{{courseId}}/modules/{{module._id}}">
         {{module.title}}
       </a>
     </li>

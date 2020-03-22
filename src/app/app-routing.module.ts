@@ -6,10 +6,10 @@ import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'courses', component: CourseListComponent},
-  {path: 'details/:courseId', component: CourseViewerComponent},
-  {path: 'details/:courseId/modules/:moduleId', component: CourseViewerComponent},
-  {path: 'details/:courseId/modules/:moduleId/lessons/:lessonId', component: CourseViewerComponent}
+  {path: 'table/courses', component: CourseListComponent},
+  {path: 'table/:courseId', component: CourseViewerComponent},
+  {path: 'table/:courseId/modules/:moduleId', component: CourseViewerComponent},
+  {path: 'table/:courseId/modules/:moduleId/lessons/:lessonId', component: CourseViewerComponent}
 
 ];
 
