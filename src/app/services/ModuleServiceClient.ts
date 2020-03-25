@@ -4,6 +4,6 @@ import {Injectable} from "@angular/core";
 export class ModuleServiceClient {
 
   findModulesForCourse = (courseId) =>
-    fetch(`http://wbdv-generic-server.herokuapp.com/api/bhaumik/courses/${courseId}/modules`)
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/bhaumik/courses/${courseId}/modules`)
       .then(response => response.json())
 }
