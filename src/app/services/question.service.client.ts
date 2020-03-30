@@ -1,8 +1,9 @@
 import {Injectable} from "@angular/core";
+import {API_URL} from "../common/constants";
 
 @Injectable()
 export class QuestionServiceClient {
   findQuestionsForQuiz = (qid) =>
-    fetch(`http://localhost:3000/api/quizzes/${qid}/questions`)
+    fetch(`${API_URL}/api/quizzes/${qid}/questions`)
       .then(response => response.json())
 }
