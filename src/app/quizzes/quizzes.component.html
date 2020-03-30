@@ -1,10 +1,17 @@
+<a routerLink="/table/courses/" class="btn btn-light">Back to Courses</a>
+<br/>
 <div>
   <h2>Quizzes</h2>
 
   <ul class="list-group">
     <li class="list-group-item"
         *ngFor=" let quiz of quizzes">
-      {{quiz.title}}
+      <a routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">
+        {{quiz.title}}
+      </a>
+      <a class="float-right btn btn-warning" routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">
+        Start
+      </a>
     </li>
   </ul>
 </div>

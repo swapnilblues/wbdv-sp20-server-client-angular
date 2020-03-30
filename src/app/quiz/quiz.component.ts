@@ -13,9 +13,11 @@ export class QuizComponent implements OnInit {
 
   questions = []
   quizId = ''
+  courseId = ''
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.quizId = params.quizId
+      this.courseId = params.courseId
       fetch(`http://localhost:3000/api/quizzes/${this.quizId}/questions`)
         .then(response => response.json())
         .then(questions => this.questions = questions)

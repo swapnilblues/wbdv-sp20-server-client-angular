@@ -1,22 +1,53 @@
-<h4>{{question.title}}</h4>
-<h5>{{question.question}}</h5>
-<label>
+<h4>{{question.question}}</h4>
+<label class="list-group-item"
+       (click)="unGrade()"
+       [class]="{ 'bg-light-green': grading === true && question.correct === 'true',
+                  'bg-light-red': grading === true && answer !== question.correct && answer === 'true',
+                  'text-success': grading === true && question.correct === 'true',
+                  'text-danger': grading === true && answer !== question.correct && answer === 'true'
+
+
+
+       }">
   <input type="radio"
          value="true"
          [(ngModel)]="answer"
-         name="{{question._id}}"/> True
+         name="{{question._id}}"/> TRUE
+
+
+  <i class="float-right fa"
+     [class]="{'fa-check': grading === true && question.correct === 'true',
+                'fa-times': grading === true && answer !== question.correct && answer === 'true'
+                   }"
+     aria-hidden="true"></i>
 </label>
 <br/>
-<label>
+<label class="list-group-item"
+       (click)="unGrade()"
+       [class]="{'bg-light-green': grading === true && question.correct === 'false',
+                  'bg-light-red': grading === true && answer !== question.correct && answer === 'false',
+                  'text-success': grading === true && question.correct === 'false',
+                  'text-danger': grading === true && answer !== question.correct && answer === 'false'
+              }">
   <input type="radio"
          value="false"
          [(ngModel)]="answer"
-         name="{{question._id}}"/> False
+         name="{{question._id}}"/> FALSE
+
+  <i class="float-right fa"
+     [class]="{'fa-check': grading === true && question.correct === 'false',
+                'fa-times': grading === true && answer !== question.correct && answer === 'false'
+                   }"
+     aria-hidden="true"></i>
 </label>
-<br/>
+
 Your answer: {{answer}}
 <!--<br/>-->
 <!--Correct answer: {{question.correct}}-->
 <br/>
-<span [hidden]="answer !== question.correct">Yay!</span>
-<span [hidden]="answer === question.correct">Oops!</span>
+<br/>
+<button class="btn btn-success" (click)="grade()">Grade</button>
+<br/>
+<br/>
+<span [hidden]="grading === false || answer !== question.correct">Correct</span>
+<span [hidden]="grading === false || answer === question.correct">Wrong</span>

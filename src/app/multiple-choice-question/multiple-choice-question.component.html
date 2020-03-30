@@ -1,17 +1,34 @@
-<h4>{{question.title}}</h4>
-<h5>{{question.question}}</h5>
+<h4>{{question.question}}</h4>
 <div *ngFor="let choice of question.choices">
-  <label>
+  <label
+    class="list-group-item"
+    (click)="unGrade()"
+    [class]="{ 'bg-light-green': grading === true && question.correct === choice,
+               'bg-light-red': grading === true && answer !== question.correct && answer === choice,
+               'text-success': grading === true && question.correct === choice,
+               'text-danger': grading === true && answer !== question.correct && answer === choice
+  }">
     <input type="radio"
-           value={{choice}}
-           [(ngModel)]="answer"
-           name="{{question._id}}"/>
-    {{choice}}
+  value={{choice}}
+  [(ngModel)]="answer"
+  name="{{question._id}}"/>
+  {{choice}}
+
+    <i class="float-right fa"
+       [class]="{'fa-check': grading === true && question.correct === choice,
+                 'fa-times': grading === true && answer !== question.correct && answer === choice
+                   }"
+       aria-hidden="true"></i>
   </label>
+  <br/>
 </div>
 Your answer: {{answer}}
 <!--<br/>-->
 <!--Correct answer: {{question.correct}}-->
 <br/>
-<span [hidden]="answer !== question.correct">Yay!</span>
-<span [hidden]="answer === question.correct">Oops!</span>
+<br/>
+<button class="btn btn-success" (click)="grade()">Grade</button>
+<br/>
+<br/>
+<span [hidden]="grading === false || answer !== question.correct">Correct</span>
+<span [hidden]="grading === false || answer === question.correct">Wrong</span>

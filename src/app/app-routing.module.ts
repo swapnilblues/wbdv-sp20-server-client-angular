@@ -7,13 +7,13 @@ import {QuizzesComponent} from "./quizzes/quizzes.component";
 import {QuizComponent} from "./quiz/quiz.component";
 
 const routes: Routes = [
-  {path: 'quizzes/:quizId', component: QuizComponent},
-  {path: 'quizzes', component: QuizzesComponent},
   {path: '', component: HomeComponent},
   {path: 'table/courses', component: CourseListComponent},
   {path: 'table/courses/:courseId', component: CourseViewerComponent},
   {path: 'table/courses/:courseId/modules/:moduleId', component: CourseViewerComponent},
-  {path: 'table/courses/:courseId/modules/:moduleId/lessons/:lessonId', component: CourseViewerComponent}
+  {path: 'table/courses/:courseId/modules/:moduleId/lessons/:lessonId', component: CourseViewerComponent},
+  {path: 'courses/:courseId/quizzes/:quizId', component: QuizComponent},
+  {path: 'courses/:courseId/quizzes', component: QuizzesComponent},
 
 ];
 

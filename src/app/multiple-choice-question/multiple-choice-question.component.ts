@@ -17,6 +17,12 @@ export class MultipleChoiceQuestionComponent implements OnInit {
     choices: ''
   }
   answer = ''
+  grading = false
+
+  grade = () => {this.grading = true}
+
+  unGrade = () => {this.grading = false}
+
   ngOnInit(): void {
   }
 

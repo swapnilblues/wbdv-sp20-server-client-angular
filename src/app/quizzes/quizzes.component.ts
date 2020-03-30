@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-quizzes',
@@ -7,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzesComponent implements OnInit {
 
-  quizzes = []
-  constructor() { }
 
+  constructor(private route: ActivatedRoute) { }
+
+  quizzes = []
+  courseId = ''
   ngOnInit(): void {
-    fetch(`http://localhost:3000/api/quizzes`)
-      .then(response => response.json())
-      .then(quizzes => this.quizzes = quizzes)
+    this.route.params.subscribe(params => {
+      this.courseId = params.courseId;
+      fetch(`http://localhost:3000/api/quizzes`)
+        .then(response => response.json())
+        .then(quizzes => this.quizzes = quizzes)
+    });
+
+
+
   }
 
 }

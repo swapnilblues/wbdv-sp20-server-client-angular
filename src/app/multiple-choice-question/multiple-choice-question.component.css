@@ -1,3 +1,12 @@
 .mcq-options {
   list-style-type: none ;
 }
+
+.bg-light-green {
+  background-color: #c0ffd7
+}
+
+.bg-light-red {
+  background-color: #ffada3;
+}
+
