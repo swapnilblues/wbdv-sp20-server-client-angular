@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {API_URL} from "../common/constants";
+
 @Injectable()
 export class QuizServiceClient {
   findAllQuizzes = () =>
