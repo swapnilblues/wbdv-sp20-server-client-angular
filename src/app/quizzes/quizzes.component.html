@@ -12,6 +12,13 @@
       <a class="float-right btn btn-warning" routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">
         Start
       </a>
+      <br/>
+      {{quiz.attempts.length}}
+      <ul>
+        <li *ngFor="let attempt of quiz.attempts">
+          {{attempt.score}}%
+        </li>
+      </ul>
     </li>
   </ul>
 </div>
