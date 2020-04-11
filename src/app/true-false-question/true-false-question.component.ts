@@ -22,6 +22,7 @@ export class TrueFalseQuestionComponent implements OnInit {
   answer = ''
   @Output()
   answerChange = new EventEmitter<string>()
+
   submitAnswer = () =>
     this.answerChange.emit(this.answer)
 

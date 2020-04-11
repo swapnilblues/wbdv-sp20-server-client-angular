@@ -17,8 +17,15 @@
       </div>
     </li>
   </ul>
-  <button (click)="submitQuiz()">
+  <br/>
+  <button class="btn btn-danger" (click)="submitQuiz()">
     Submit Quiz
   </button>
-
+  <br/>
+  <br/>
+  <div *ngIf="score !== 'null'">
+    Your Score : {{score}}%
+  </div>
+  <br/>
+  <br/>
 </div>
