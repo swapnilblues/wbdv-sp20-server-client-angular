@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {QuizServiceClient} from "../services/quiz.service.client";
+import {API_URL} from "../common/constants";
 
 @Component({
   selector: 'app-quizzes',
@@ -29,9 +30,8 @@ export class QuizzesComponent implements OnInit {
         .then(quizzes => {
           this.quizzes = quizzes
           return quizzes.map(quiz => {
-            console.log(quiz._id)
-            return fetch(`http://localhost:3000/api/quizzes/${quiz._id}/attempts`)
-              .then(response => response.json())
+            // console.log(quiz._id)
+            return this.service.findAttemptsForQuiz(quiz._id)
           })
         })
         .then(attemptPromises => {

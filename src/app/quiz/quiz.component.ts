@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {QuestionServiceClient} from "../services/question.service.client";
+import {QuizServiceClient} from "../services/quiz.service.client";
 
 @Component({
   selector: 'app-quiz',
@@ -10,7 +10,7 @@ import {QuestionServiceClient} from "../services/question.service.client";
 export class QuizComponent implements OnInit {
 
   constructor(
-    private service: QuestionServiceClient,
+    private service: QuizServiceClient,
     private route: ActivatedRoute) {
   }
 
@@ -20,13 +20,7 @@ export class QuizComponent implements OnInit {
   score = 'null'
 
   submitQuiz = () => {
-    fetch(`http://localhost:3000/api/quizzes/${this.quizId}/attempts`, {
-      method: 'POST',
-      body: JSON.stringify(this.questions),
-      headers: {
-        'content-type': 'application/json'
-      }
-    }).then(response => response.json())
+    this.service.submitQuiz(this.quizId, this.questions)
       .then(result => this.score = result.score)
   }
 
